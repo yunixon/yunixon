@@ -7,6 +7,12 @@ Rails.application.routes.draw do
 
   get '*path' => 'home#index'
 
+  namespace :api, defaults: { format: 'json' } do
+    scope module: :v1, constraints: ApiConstraints.new(version: 1) do
+      resources :projects
+    end
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
