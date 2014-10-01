@@ -1,2 +1,10 @@
-h1 My portfolio - yunixon
-outlet
+header
+  article
+    .logo
+      h1
+        a href="#" Yunixon portfolio
+
+section#main
+  = outlet
+
+footer
