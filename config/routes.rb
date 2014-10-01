@@ -7,13 +7,21 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
 
-  get '*path' => 'home#index'
+  
 
-  namespace :api, defaults: { format: 'json' } do
-    scope module: :v1, constraints: ApiConstraints.new(version: 1) do
+  #namespace :api, defaults: { format: 'json' } do
+  #  scope module: :v1, constraints: ApiConstraints.new(version: 1) do
+  #    resources :projects
+  #  end
+  #end
+
+  namespace :api do
+    namespace :v1 do
       resources :projects
     end
   end
+
+  get '*path' => 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

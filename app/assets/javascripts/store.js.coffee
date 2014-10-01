@@ -2,10 +2,7 @@
 # http://emberjs.com/guides/models/pushing-records-into-the-store/
 
 DS.RESTAdapter.reopen
-  namespace: 'api'
-  headers: {
-    "Accept": "application/vnd.myapp.v1+json"
-  }
+  namespace: 'api/v1'
 
 App.Store = DS.Store.extend({
 
