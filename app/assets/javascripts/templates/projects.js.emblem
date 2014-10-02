@@ -2,4 +2,6 @@ article#projects
   h1 Projects
   ul
     each project in controller
-      li= project.name
+      link-to 'project' project tagName="li"
+        project.name_and_status
+outlet

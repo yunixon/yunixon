@@ -1,0 +1,18 @@
+article#project
+  h1= model.name_and_status
+
+  p
+    ' Name:
+    model.name
+
+  p
+    ' Description:
+    model.description
+
+  p
+    ' Link:
+    model.link
+
+  p
+    ' Photo:
+    model.photo

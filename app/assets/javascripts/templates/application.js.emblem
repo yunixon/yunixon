@@ -5,6 +5,6 @@ header
         a href="#" Yunixon portfolio
 
 section#main
-  = outlet
+  outlet
 
 footer
