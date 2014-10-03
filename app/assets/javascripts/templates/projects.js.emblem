@@ -1,5 +1,7 @@
 article#projects
-  h1 Projects
+  h1 
+    | Projects
+    link-to 'projects.new' | New Project
   ul
     each project in controller
       link-to 'project' project tagName="li"
