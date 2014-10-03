@@ -16,3 +16,17 @@ article#project
   p
     ' Photo:
     model.photo
+  p
+    label Status:
+    '
+    view Ember.Select content=App.Project.STATUSES value=model.status
+  p
+    label Description:
+    br
+    view Ember.TextArea value=model.description
+  p
+    input type='submit' value='Save Changes' click='saveChanges'
+    if showUnsavedMessage
+      .unsaved unsaved changes
+    if isSaving
+      .saving saving...

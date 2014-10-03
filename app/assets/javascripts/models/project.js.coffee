@@ -8,3 +8,6 @@ App.Project = DS.Model.extend
   name_and_status: ( ->
     @get('name') + ' - ' + @get('status')
   ).property('name', 'status')
+
+App.Project.reopenClass
+  STATUSES: ['Active', 'On Hold', 'Complited', 'Dropped']
