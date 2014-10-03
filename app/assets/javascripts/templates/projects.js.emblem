@@ -2,8 +2,9 @@ article#projects
   h1 
     | Projects
     link-to 'projects.new' | New Project
+  view Ember.TextField value=search placeholder="search" classNames="search"
   ul
-    each project in controller
+    each project in projects
       link-to 'project' project tagName="li"
         project.name_and_status
 outlet
