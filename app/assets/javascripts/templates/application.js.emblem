@@ -2,7 +2,10 @@ header
   article
     .logo
       h1
-        a href="#" Yunixon portfolio
+        a href="#" Yuri Skurikhin portfolio (yunixon)
+        nav
+          a href="https://github.com/yunixon"
+            img src="github_cat.png" alt="github profile"
 
 section#main
   outlet
