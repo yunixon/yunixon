@@ -5,5 +5,7 @@ App.Router.reopen
 
 App.Router.map ->
   @resource 'projects', path: '/', ->
-    @resource 'project', path: '/projects/:id'
+    @route 'new'
+    @resource 'project', path: '/projects/:id', ->
+      @route 'edit'
 

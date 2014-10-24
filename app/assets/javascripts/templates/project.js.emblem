@@ -1,18 +1,38 @@
-article#project
-  h1= model.name_and_status
+= outlet
 
-  p
-    ' Name:
-    model.name
+unless isEditing
+  article#project
+    h1
+      model.name
+      link-to 'edit' 'project.edit' model classNames='edit'
 
-  p
-    ' Description:
-    model.description
+    p
+      ' Name:
+      model.name
 
-  p
-    ' Link:
-    model.link
+    p
+      ' Description:
+      model.description
 
-  p
-    ' Photo:
-    model.photo
+    p
+      ' Link:
+      model.link
+
+    p
+      ' Photo:
+      model.photo
+    p
+      label Status:
+      '
+      view Ember.Select content=App.Project.STATUSES value=model.status
+    p
+      label Description:
+      br
+      view Ember.TextArea value=model.description
+    p
+      a.delete href='#' click="delete" delete
+      input type='submit' value='Save Changes' click='saveChanges'
+      if showUnsavedMessage
+        .unsaved unsaved changes
+      if isSaving
+        .saving saving...

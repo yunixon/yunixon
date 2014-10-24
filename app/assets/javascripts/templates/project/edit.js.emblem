@@ -1,0 +1,21 @@
+article#project
+  h1
+    model.name
+
+  form
+    fieldset
+      dl
+        dt: label Name:
+        dd: view Ember.TextField value=model.name
+
+      dl
+        dt: label Link:
+        dd: view Ember.TextField value=model.link
+
+      dl
+        dt: label Photo:
+        dd: view Ember.TextField value=model.photo
+
+    fieldset.actions
+      input type='submit' value='Save Changes' click="saveChanges"
+      a.cancel href="#" click="cancel" cancel

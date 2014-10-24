@@ -1,0 +1,26 @@
+article#project
+  h1 New Project
+
+  if showError
+    .error Projects must have a name and link.
+
+  form
+    fieldset
+      dl
+        dt: label Name:
+        dd: view Ember.TextField value=fields.name
+
+      dl
+        dt: label Description:
+        dd: view Ember.TextField value=fields.description
+
+      dl
+        dt: label Link:
+        dd: view Ember.TextField value=fields.link
+
+      dl
+        dt: label Photo:
+        dd: view Ember.TextField value=fields.photo
+
+    fieldset.actions
+      input type='submit' value='Create Project' click="createProject"
